@@ -7,12 +7,13 @@ import HomePage from './pages/home/HomePage';
 import RegisterPage from './pages/auth/RegisterPage';
 import ProfilePage from './pages/profile/ProfilePage';
 import TasksPage from './pages/tasks/TasksPage';
+import { type } from '@testing-library/user-event/dist/type';
 
 function AppRoutingFinal() {
 
   //TODO Cambiar el estado por el sesionStory
-  let loggedIn=true;
-
+  let loggedIn=sessionStorage.getItem('Sesion');
+  
   return (
     <Router>
       <main>
@@ -20,23 +21,25 @@ function AppRoutingFinal() {
         {/* Redirecciones para proteger nuestras rutas */}
         <Route 
           exact path='/' 
-          element={loggedIn?
+          element={loggedIn==='true'?
             <Navigate to='/dashboard'/>
             :
             <Navigate to='/login'/>
           }
         />
+        {/* Ruta a profile*/}
         <Route 
               path='/profile' 
-              element={loggedIn ?
+              element={loggedIn==='true' ?
               <ProfilePage/> 
               :
               <Navigate replace to="/login"  />
               }
         />
+        {/* Ruta a tareas*/}
         <Route 
           path='/tasks' 
-          element={loggedIn?
+          element={loggedIn==='true'?
             <TasksPage/>
             :
             <Navigate replace to="/login"  />
@@ -50,7 +53,7 @@ function AppRoutingFinal() {
         {/* DashBoard ruta */}
         <Route  
           path='/dashboard'
-          element={loggedIn ?
+          element={loggedIn==='true' ?
             (<DashBoardPage/>)
             :
             (<Navigate from='/' to="/login"  />)

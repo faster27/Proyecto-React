@@ -43,6 +43,7 @@ const LoginFormik = () => {
                     alert (JSON.stringify(values,null,2));
                     //Se guardan los datos en el almacenamiento local
                     await localStorage.setItem('credential', values)
+                    await sessionStorage.setItem('Sesion',true)
                     navigate('/profile');
                 }}  
             >

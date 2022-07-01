@@ -9,6 +9,7 @@ const DashBoardPage = () => {
     const navigate = useNavigate();
 
     const logout = () => {
+        sessionStorage.setItem('Sesion',false);
         navigate('/login')
     }
 
