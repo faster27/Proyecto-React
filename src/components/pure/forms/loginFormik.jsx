@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+
 
 
 
@@ -20,6 +22,13 @@ const LoginFormik = () => {
         email:"",
         password:""
     }
+
+    const navigate =useNavigate();
+
+    const navigateTo = (path) => {
+        navigate()
+    }
+
     return (
         <div>
             <h4>Login Formik</h4>
@@ -33,7 +42,8 @@ const LoginFormik = () => {
                     await new Promise((r)=>setTimeout(r,1000));
                     alert (JSON.stringify(values,null,2));
                     //Se guardan los datos en el almacenamiento local
-                    localStorage.setItem('credential', values)
+                    await localStorage.setItem('credential', values)
+                    navigate('/profile');
                 }}  
             >
 
@@ -74,6 +84,7 @@ const LoginFormik = () => {
 
                             <button type="submit">Login</button>
                             {isSubmitting ? (<p>Login your credentials...</p>) : null}
+                            <button onClick={()=>navigateTo("/register")}>Register</button>
                         
                         </Form>
                 )}
