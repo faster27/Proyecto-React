@@ -17,6 +17,11 @@ import Sesiones101112 from './EjerciciosSesiones/Sesiones10-11-12';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
 import TaskFormik from './components/pure/forms/taskFormik';
+import AsyncExample from './components/pure/AsyncExample';
+import ObservableExample from './components/pure/ObservableExample';
+import FetchExample from './components/pure/FetchExample';
+import AxiosExample from './components/pure/AxiosExample';
+import ChuckNorrisJokes from './components/pure/ChuckNorrisJokes';
 
 function App() {
   return (
@@ -50,14 +55,18 @@ function App() {
 
       {/* <RegisterFormik></RegisterFormik> */}
 
+      {/* Ejemplo de asincronia */}
 
       {/* PROYECTO FINAL */}
-      <TasksPage></TasksPage>
+      {/* <TasksPage></TasksPage> */}
       
-
+      {/* <AsyncExample></AsyncExample> */}
+      {/* <ObservableExample></ObservableExample> */}
       
-
+      {/* <FetchExample></FetchExample> */}
       
+      {/* <AxiosExample></AxiosExample> */}
+      <ChuckNorrisJokes></ChuckNorrisJokes>
 
     </div>
   );
