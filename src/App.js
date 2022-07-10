@@ -22,6 +22,10 @@ import ObservableExample from './components/pure/ObservableExample';
 import FetchExample from './components/pure/FetchExample';
 import AxiosExample from './components/pure/AxiosExample';
 import ChuckNorrisJokes from './components/pure/ChuckNorrisJokes';
+import AxiosCRUDExample from './components/pure/AxiosCRUDExample';
+import TodosContainer from './components/container/ejemploRedux/TodoContainer';
+import TodoFormContainer from './components/container/ejemploRedux/TodoFormContainer';
+import FilterOptions from './components/pure/ejemploRedux/FilterOptions';
 
 function App() {
   return (
@@ -56,17 +60,25 @@ function App() {
       {/* <RegisterFormik></RegisterFormik> */}
 
       {/* Ejemplo de asincronia */}
-
-      {/* PROYECTO FINAL */}
-      {/* <TasksPage></TasksPage> */}
-      
+  
       {/* <AsyncExample></AsyncExample> */}
       {/* <ObservableExample></ObservableExample> */}
       
       {/* <FetchExample></FetchExample> */}
       
       {/* <AxiosExample></AxiosExample> */}
-      <ChuckNorrisJokes></ChuckNorrisJokes>
+      {/* <ChuckNorrisJokes></ChuckNorrisJokes> */}
+
+      {/* <AxiosCRUDExample></AxiosCRUDExample> */}
+
+      {/*Ejercicio sesiones 22,23,24 replicar el uso de redux  */}
+      <TodosContainer></TodosContainer>
+      <TodoFormContainer></TodoFormContainer>
+      {/* Opciones de filtrado */}
+      <FilterOptions></FilterOptions>
+
+      {/* PROYECTO FINAL */}
+      {/* <TasksPage></TasksPage> */}
 
     </div>
   );

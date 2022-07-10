@@ -8,6 +8,10 @@ export  function getUser(){
     });
 }
 
+
+
+
+
 export  function getChuckNorrisJoke(){
     return APIRequest.get('/', {
         validateStatus: function (status) {

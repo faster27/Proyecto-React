@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+//Importar configuracion para actualizarlo
+import { createAppStore, createAppAsyncStore } from './store/config/storeConfig'
+
 //Añadimos bootstrap a nuestro proyecto
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -14,14 +17,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AppRoutingOne from './AppRoutingOne';
 import AppRoutingFinal from './AppRoutingFinal';
+//Redux imports
+import { Provider } from 'react-redux';
+import AppReduxSaga from './AppReduxSaga';
+
+
+let appAsyncStore = createAppAsyncStore();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-    {/* <AppRoutingOne></AppRoutingOne> */}
-    {/* <AppRoutingFinal></AppRoutingFinal> */}
-  </React.StrictMode>
+  <Provider store={appAsyncStore}>
+    <React.StrictMode>
+      <App/>
+      {/* <AppReduxSaga /> */}
+      {/* <AppRoutingOne></AppRoutingOne> */}
+      {/* <AppRoutingFinal></AppRoutingFinal> */}
+    </React.StrictMode>
+  </Provider>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
